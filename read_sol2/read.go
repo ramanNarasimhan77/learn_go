@@ -35,23 +35,13 @@ func check(e error) {
 }
 
 func fileExists(filename string) bool {
-	fmt.Println("Searching for file:", filename, " length:", len(filename))
+	fmt.Println("Searching for file:", filename)
 	info, err := os.Stat(filename)
 	if err != nil {
 		fmt.Errorf("Failed to find file", err.Error())
 		return false
 	}
 	return !info.IsDir()
-}
-
-func trimSuffix(str string) string {
-	var suffix string
-	if strings.HasSuffix(str, "\r\n") {
-		suffix = "\r\n"
-	} else if strings.HasSuffix(str, "\n") {
-		suffix = "\n"
-	}
-	return strings.TrimRight(str, suffix)
 }
 
 func readPersonNamesFromFile(pathToFile string) []PersonName {
