@@ -47,7 +47,7 @@ func main() {
 
 	fmt.Println("Enter your name:")
 	addressMap["name"] = readUserInput(false)
-	fmt.Println("Enter your address")
+	fmt.Println("Enter your address in one line")
 	addressMap["address"] = readUserInput(false)
 
 	jsonData, _ := json.Marshal(addressMap)
